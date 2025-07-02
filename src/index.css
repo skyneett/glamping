@@ -1,0 +1,505 @@
+/* Reset básico y tipografía */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f7fa;
+  color: #1a1a1a;
+}
+
+header {
+  background: #153060;
+  padding: 20px 0 10px 0;
+  text-align: center;
+}
+header h1 {
+  color: #fff;
+  font-weight: bold;
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+}
+nav {
+  background: #1e4177;
+  padding: 0.5rem 0;
+  margin-bottom: 40px;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+nav ul li a:hover {
+  color: #a3c0f7;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.container h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.container p {
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+}
+.dashboard-cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.dashboard-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(21,48,96,0.08);
+  padding: 20px;
+  min-width: 220px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dashboard-card h3 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #153060;
+}
+.dashboard-card p {
+  color: #555;
+  margin-bottom: 20px;
+}
+.dashboard-link button {
+  background: #1e4177;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7em 1.5em;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0;
+}
+.dashboard-link button:hover {
+  background: #153060;
+}
+
+/* --- FORMULARIO DE NUEVO CLIENTE --- */
+.clientes-form-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(21,48,96,0.10);
+  width: 800px;
+  margin: 40px auto 0 auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.clientes-form-container label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #153060;
+}
+.clientes-form-container input {
+  width: 100%;
+  height: 35px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.clientes-form-container button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 15px;
+  align-self: flex-start;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.clientes-form-container button:hover {
+  background: #218838;
+}
+
+/* --- TABLA DE CLIENTES --- */
+.clientes-table-container {
+  width: 800px;
+  margin: 40px auto 0 auto;
+}
+.clientes-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 1px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(21,48,96,0.08);
+  overflow: hidden;
+}
+.clientes-table th {
+  background: #153060;
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 15px;
+}
+.clientes-table td {
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1rem;
+  background: #fff;
+}
+.clientes-table td:first-child {
+  text-align: left;
+}
+.clientes-table td:last-child {
+  text-align: center;
+}
+.clientes-table-actions button {
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 1rem;
+  color: #fff;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.clientes-table-actions .editar {
+  background: #17a2b8;
+}
+.clientes-table-actions .editar:hover {
+  background: #138496;
+}
+.clientes-table-actions .eliminar {
+  background: #dc3545;
+}
+.clientes-table-actions .eliminar:hover {
+  background: #b52a37;
+}
+
+footer {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 20px 0;
+  margin-top: 60px;
+}
+
+/* Tablas y botones generales */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(21,48,96,0.06);
+  overflow: hidden;
+}
+th, td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+}
+th {
+  background: #e3eaf6;
+  color: #153060;
+  font-weight: bold;
+}
+td {
+  color: #222;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1e4177;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.25s;
+}
+button:hover {
+  background: #153060;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* --- GLAMPINGS --- */
+.glamping-main-container {
+  width: 800px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.glamping-form-container {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 16px rgba(21,48,96,0.10);
+  width: 100%;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+.glamping-form-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #153060;
+}
+.glamping-form-container label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #153060;
+}
+.glamping-form-container input,
+.glamping-form-container select,
+.glamping-form-container textarea {
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  resize: none;
+}
+.glamping-form-container textarea {
+  height: 80px;
+}
+.glamping-form-container button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.glamping-form-container button:hover {
+  background: #218838;
+}
+
+/* --- TARJETAS DE GLAMPINGS (CARDS) --- */
+.glamping-cards-section {
+  width: 900px;
+  margin: 0 auto 30px auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.glamping-cards-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #153060;
+  margin-bottom: 18px;
+  text-align: left;
+  width: 100%;
+}
+.glamping-cards-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 0;
+}
+.glamping-card {
+  width: 270px;
+  height: 180px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 15px;
+  justify-content: space-between;
+}
+.glamping-card-title {
+  background: #3498db;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding: 10px 0;
+  font-size: 16px;
+  height: 40px;
+  margin: -15px -15px 10px -15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+}
+.glamping-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  align-items: flex-start;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+.glamping-card-content .glamping-info strong {
+  font-weight: bold;
+}
+.glamping-badge {
+  display: inline-block;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 15px;
+  padding: 4px 18px;
+  font-size: 12px;
+  margin-top: 10px;
+  font-family: sans-serif;
+  min-width: 60px;
+  text-align: center;
+}
+.glamping-card-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.glamping-card-buttons button {
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 12px;
+  height: 30px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.glamping-card-buttons .detalles {
+  background: #007bff;
+}
+.glamping-card-buttons .detalles:hover {
+  background: #0056b3;
+}
+.glamping-card-buttons .editar {
+  background: #17a2b8;
+}
+.glamping-card-buttons .editar:hover {
+  background: #138496;
+}
+.glamping-card-buttons .eliminar {
+  background: #dc3545;
+}
+.glamping-card-buttons .eliminar:hover {
+  background: #b52a37;
+}
+
+/* --- TABLA DE GLAMPINGS --- */
+.glamping-table-container {
+  width: 100%;
+  margin: 30px auto 40px auto;
+}
+.glamping-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(21,48,96,0.08);
+  overflow: hidden;
+  font-size: 14px;
+}
+.glamping-table th {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  height: 40px;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 15px;
+}
+.glamping-table td {
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 14px;
+  background: #fff;
+}
+.glamping-table td:first-child {
+  text-align: left;
+}
+.glamping-table td:last-child {
+  text-align: center;
+}
+.glamping-table-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.glamping-table-actions button {
+  border: none;
+  border-radius: 5px;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  color: #fff;
+  height: 30px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.glamping-table-actions .detalles {
+  background: #007bff;
+}
+.glamping-table-actions .detalles:hover {
+  background: #0056b3;
+}
+.glamping-table-actions .editar {
+  background: #17a2b8;
+}
+.glamping-table-actions .editar:hover {
+  background: #138496;
+}
+.glamping-table-actions .eliminar {
+  background: #dc3545;
+}
+.glamping-table-actions .eliminar:hover {
+  background: #b52a37;
+}

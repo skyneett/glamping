@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Glamping Sol",
+    "ubicacion": "Montaña",
+    "capacidad": 4
+  },
+  {
+    "id": 2,
+    "nombre": "Glamping Luna",
+    "ubicacion": "Bosque",
+    "capacidad": 2
+  }
+]

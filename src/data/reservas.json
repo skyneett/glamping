@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "clienteId": 1,
+    "glampingId": 2,
+    "fechaInicio": "2025-07-01",
+    "fechaFin": "2025-07-05"
+  },
+  {
+    "id": 2,
+    "clienteId": 2,
+    "glampingId": 1,
+    "fechaInicio": "2025-08-10",
+    "fechaFin": "2025-08-15"
+  }
+]

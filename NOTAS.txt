@@ -1,0 +1,29 @@
+1. QUE SON LOS archivo .JSX?
+Un archivo .jsx es como un archivo de JavaScript normal,
+pero te permite escribir “etiquetas” parecidas a HTML dentro del código.
+Esto hace que crear pantallas y botones en React sea mucho más fácil y visual
+Un archivo .jsx es donde creas las partes visuales de tu aplicación React usando 
+una mezcla de JavaScript y etiquetas tipo HTML. Es más fácil de leer y de trabajar, 
+sobre todo para hacer interfaces web.
+
+
+2. ¿Cómo funciona el código y cómo está enlazado todo?
+
+- Cuando abres la web, lo primero que se carga es el archivo principal (`App.jsx`). 
+Este archivo es como el “director de tráfico” y decide qué página mostrar según lo que elijas en el menú 
+(por ejemplo, si quieres ver clientes, reservas, etc.).
+
+- El menú y la estructura general de la página (con el header y el footer) están en un archivo llamado 
+`MainLayout.jsx`. Así, todas las páginas se ven iguales y tienen el mismo estilo.
+
+- Cada sección (Clientes, Glampings, Reservas) tiene su propio archivo `.jsx` (por ejemplo, `ClientesPage.jsx`). 
+Estos archivos se encargan de mostrar la información correspondiente y usan el layout general para verse igual que el resto.
+
+- Los datos (clientes, glampings, reservas) están guardados en archivos `.json`. Cada página lee su archivo de datos 
+y muestra la información en una tabla.
+
+- Los componentes pequeños y reutilizables (como los botones o las tarjetas) están en carpetas especiales 
+(`atoms`, `molecules`, `organisms`). Esto ayuda a que el código sea más ordenado y fácil de mantener.
+
+En resumen: el código está dividido en partes pequeñas y organizadas. Todo está conectado a través de rutas y 
+componentes, así puedes navegar y ver la información de forma clara y sencilla.
