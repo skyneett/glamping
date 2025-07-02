@@ -22,15 +22,9 @@ export default function HomePage() {
 
   return (
     <MainLayout>
-      <div style={{ maxWidth: 900, margin: '40px auto 0 auto', padding: '0 40px' }}>
-        <div style={{ textAlign: 'left', marginTop: 50, marginBottom: 40, marginLeft: '16px' }}>
-          <h2 style={{ fontFamily: 'Roboto, Arial, sans-serif', fontSize: 28, fontWeight: 'bold', color: '#333', marginBottom: 14, marginTop: 0 }}>
-            Bienvenido al Sistema de Gestión de Glamping
-          </h2>
-          <p style={{ fontFamily: 'Roboto, Arial, sans-serif', fontSize: 16, fontWeight: 400, color: '#666', margin: 0 }}>
-            Este sistema le permite administrar clientes, glampings y reservas de manera eficiente.
-          </p>
-        </div>
+      <div className="container">
+        <h2>Bienvenido al Sistema de Gestión de Glamping</h2>
+        <p>Este sistema le permite administrar clientes, glampings y reservas de manera eficiente.</p>
         <DashboardCards cards={cards} />
       </div>
     </MainLayout>
