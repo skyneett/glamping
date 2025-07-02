@@ -12,5 +12,21 @@
     "glampingId": 1,
     "fechaInicio": "2025-08-10",
     "fechaFin": "2025-08-15"
+  },
+  {
+    "id": 3,
+    "clienteId": 3,
+    "glampingId": 3,
+    "fechaInicio": "2025-07-02",
+    "fechaFin": "2025-07-03",
+    "totalPagado": "1",
+    "estado": "Confirmada"
+  },
+  {
+    "id": 2,
+    "clienteId": 2,
+    "glampingId": 1,
+    "fechaInicio": "2025-08-10",
+    "fechaFin": "2025-08-15"
   }
 ]

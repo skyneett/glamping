@@ -10,5 +10,12 @@
     "nombre": "Ana Gómez",
     "email": "ana.gomez@email.com",
     "telefono": "987654321"
+  },
+  {
+    "id": 3,
+    "nombre": "luis torres",
+    "email": "hernan15924@gmail.com",
+    "telefono": "3145313450",
+    "documento": "1001663829"
   }
 ]

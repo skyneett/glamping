@@ -21,22 +21,31 @@ export default function ReservasPage() {
   const [anio, setAnio] = useState(new Date().getFullYear());
 
   // Cargar datos desde archivos JSON
+  // Cargar datos desde la API
   useEffect(() => {
-    fetch('/src/data/clientes.json')
+    fetch('http://localhost:3001/clientes')
       .then(res => res.json())
       .then(data => setClientes(data));
-    fetch('/src/data/glampings.json')
+    fetch('http://localhost:3001/glampings')
       .then(res => res.json())
       .then(data => setGlampings(data));
-    fetch('/src/data/reservas.json')
+    fetch('http://localhost:3001/reservas')
       .then(res => res.json())
       .then(data => setReservas(data));
   }, []);
 
-  // Guardar cambios en reservas (simulación, requiere backend real para persistir en archivo)
+  // Guardar cambios en reservas (POST a la API)
   const persistirReservas = (nuevasReservas) => {
-    setReservas(nuevasReservas);
-    // Simulación: aquí iría un fetch POST/PUT a una API real para guardar en reservas.json
+    const nuevaReserva = nuevasReservas[nuevasReservas.length - 1];
+    fetch('http://localhost:3001/reservas', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(nuevaReserva)
+    })
+      .then(res => res.json())
+      .then(data => {
+        setReservas(nuevasReservas);
+      });
   };
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });

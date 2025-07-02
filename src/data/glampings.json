@@ -2,13 +2,27 @@
   {
     "id": 1,
     "nombre": "Glamping Sol",
-    "ubicacion": "Montaña",
-    "capacidad": 4
+    "capacidad": 4,
+    "precio": 0,
+    "caracteristicas": [],
+    "disponible": "true"
   },
   {
     "id": 2,
     "nombre": "Glamping Luna",
-    "ubicacion": "Bosque",
-    "capacidad": 2
+    "capacidad": 2,
+    "precio": 0,
+    "caracteristicas": [],
+    "disponible": "true"
+  },
+  {
+    "id": 3,
+    "nombre": "Tamarindos",
+    "capacidad": "1",
+    "precio": "1",
+    "caracteristicas": [
+      "internet"
+    ],
+    "disponible": "true"
   }
 ]

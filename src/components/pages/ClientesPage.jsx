@@ -13,8 +13,9 @@ export default function ClientesPage() {
   const [alerta, setAlerta] = useState({ mensaje: '', tipo: '' });
   const [errores, setErrores] = useState({});
 
+  // Cargar clientes desde la API
   useEffect(() => {
-    fetch('/src/data/clientes.json')
+    fetch('http://localhost:3001/clientes')
       .then(res => res.json())
       .then(data => setClientes(data));
   }, []);
@@ -51,7 +52,7 @@ export default function ClientesPage() {
     }
     setErrores({});
     if (editandoId) {
-      // Actualizar cliente existente
+      // Actualizar cliente existente (solo en memoria, podrías agregar un endpoint PUT en el backend si lo deseas)
       const actualizados = clientes.map(c =>
         c.id === editandoId ? { ...c, ...form } : c
       );
@@ -59,16 +60,25 @@ export default function ClientesPage() {
       mostrarAlerta('Cliente actualizado con éxito', 'success');
       resetearFormulario();
     } else {
-      // Crear nuevo cliente
+      // Crear nuevo cliente (POST a la API)
       const nuevoCliente = {
         id: clientes.length > 0 ? Math.max(...clientes.map(c => c.id)) + 1 : 1,
         ...form
       };
-      setClientes([...clientes, nuevoCliente]);
-      mostrarAlerta('Cliente creado con éxito', 'success');
-      resetearFormulario();
+      fetch('http://localhost:3001/clientes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(nuevoCliente)
+      })
+        .then(res => res.json())
+        .then(data => {
+          setClientes([...clientes, data]);
+          mostrarAlerta('Cliente creado con éxito', 'success');
+          resetearFormulario();
+        });
     }
   };
+
 
   const handleEditar = (cliente) => {
     setForm({ nombre: cliente.nombre, email: cliente.email, telefono: cliente.telefono, documento: cliente.documento });
@@ -87,11 +97,12 @@ export default function ClientesPage() {
   };
 
   const confirmarEliminar = () => {
+    // Eliminar cliente (solo en memoria, podrías agregar un endpoint DELETE en el backend si lo deseas)
     setClientes(clientes.filter(c => c.id !== clienteAEliminar.id));
     setShowModal(false);
     setClienteAEliminar(null);
     mostrarAlerta('Cliente eliminado con éxito', 'success');
-    if (editandoId === clienteAEliminar.id) resetearFormulario();
+    if (editandoId === clienteAEliminar?.id) resetearFormulario();
   };
 
   const cancelarEliminar = () => {

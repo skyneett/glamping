@@ -18,8 +18,11 @@ export default function GlampingsPage() {
     // { glampingId: 2, ... }
   ];
 
+
+
+  // Cargar glampings desde la API
   useEffect(() => {
-    fetch('/src/data/glampings.json')
+    fetch('http://localhost:3001/glampings')
       .then(res => res.json())
       .then(data => setGlampings(data));
   }, []);
@@ -53,7 +56,7 @@ export default function GlampingsPage() {
       return;
     }
     if (editandoId) {
-      // Actualizar glamping
+      // Actualizar glamping existente (solo en memoria, podrías agregar un endpoint PUT en el backend si lo deseas)
       const actualizados = glampings.map(g =>
         g.id === editandoId ? {
           ...g,
@@ -66,7 +69,7 @@ export default function GlampingsPage() {
       mostrarAlerta('Glamping actualizado con éxito', 'success');
       resetearFormulario();
     } else {
-      // Crear nuevo glamping
+      // Crear nuevo glamping (POST a la API)
       const nuevoGlamping = {
         id: glampings.length > 0 ? Math.max(...glampings.map(g => g.id)) + 1 : 1,
         nombre: form.nombre,
@@ -75,9 +78,17 @@ export default function GlampingsPage() {
         caracteristicas: form.caracteristicas.split(',').map(c => c.trim()).filter(Boolean),
         disponible: form.disponible
       };
-      setGlampings([...glampings, nuevoGlamping]);
-      mostrarAlerta('Glamping creado con éxito', 'success');
-      resetearFormulario();
+      fetch('http://localhost:3001/glampings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(nuevoGlamping)
+      })
+        .then(res => res.json())
+        .then(data => {
+          setGlampings([...glampings, data]);
+          mostrarAlerta('Glamping creado con éxito', 'success');
+          resetearFormulario();
+        });
     }
   };
 
